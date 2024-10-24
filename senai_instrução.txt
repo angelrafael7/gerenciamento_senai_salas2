@@ -1,0 +1,79 @@
+Obs: este código foi criado com eclipse workspace
+
+http://localhost:8089/usuarios ou /salas ou /reservas
+
+Obs: Os usuários no meu trabalho começam com o id: 4
+
+POST reservas - delete reservas/id
+GET reservas ou reservas/id
+DELETE reservas/id
+PUT - DEIXEI ABAIXO O MÉTODO PUT PARA SER EXECUTADO, ELE É UM POUCO DIFERENTE DO ABAIXO!
+
+{
+    "usuarioIds": [4], // ID de um usuário válido
+    "salaIds": [1], // ID de uma sala válida
+    "dataHoraInicio": "2024-10-30T10:00:00", // Formato: YYYY-MM-DDTHH:mm:ss
+    "dataHoraFim": "2024-10-30T12:00:00"
+}
+
+POST salas - delete reservas/id
+GET salas ou salas/id
+PUT salas/id
+DELETE salas/id
+{
+        "id": 1,
+        "nome": "Sala BR",
+        "departamento": "Administração",
+        "status": true,
+        "capacidade": 22,
+        "ativa": true
+    }
+
+Post usuarios
+Delete usuarios/id
+Put usuarios/id
+GET usuarios ou usuarios/id
+
+{
+        "id": 4,
+        "nome": "João Silva",
+        "email": "joao.silva@example.com",
+        "telefone": "123456789",
+        "cpf": "12345678901"
+    }
+
+PUT reservas/id - exemplo
+
+{
+    "id": 1,
+    "dataHoraInicio": "2024-10-30T10:00:00",
+    "dataHoraFim": "2024-10-30T12:00:00",
+    "usuarios": [
+        {
+            "id": 4
+        }
+    ],
+    "salas": [
+        {
+            "id": 1
+        }
+    ],
+    "dataReserva": "2024-10-24T00:00:00"
+}
+
+LISTAR RESERVA POR ID DE USUÁRIO
+
+http://localhost:8089/reservas/usuario/id - substitua id pelo id de usuário
+
+Listar RESERVA POR ID DE SALA
+
+http://localhost:8089/reservas/salas/id - substitua id pelo id de usuário
+
+LISTAR RESERVA POR DATA DE INÍCIO
+
+http://localhost:8089/reservas/data/yyyy-MM-dd'T'HH:mm - substitua aquele palavrão pela data de início!!
+
+restaurar Usuário deletado
+
+http://localhost:8089/usuarios/ID/restaurar - troque id pelo número do id que você deletou e gostaria de restaurar
+Obs: os ids começam em 4.
